@@ -5,11 +5,11 @@ use std::io::Read;
 use tokenizer::tokenize;
 
 fn main() {
-    let source_path = "./example_2.bb";
-    // let source_path = "./example_1.bb";
-    // let source_path = "./invalid_example_1.bb";
+    let Some(source_path) = std::env::args().nth(1) else {
+        return;
+    };
 
-    let source = read_source(source_path).unwrap();
+    let source = read_source(&source_path).unwrap();
     let tokens = tokenize(&source);
 
     for token in &tokens {
