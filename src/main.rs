@@ -13,20 +13,7 @@ fn main() {
     let tokens = tokenize(&source);
 
     for token in &tokens {
-        println!(
-            "line: {}, token type: {}, lexeme: {}",
-            token.line,
-            token.token_type,
-            format_lexeme(&token.lexeme)
-        );
-    }
-}
-
-fn format_lexeme(input: &str) -> String {
-    if input.len() == 1 && input.chars().nth(0) == Some('\n') {
-        String::from("'\\n'")
-    } else {
-        String::from(format!("\"{}\"", input))
+        println!("{token}",);
     }
 }
 
