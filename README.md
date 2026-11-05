@@ -1,5 +1,5 @@
 Accepting filepath as command line argument:
 
-```rs
+```sh
 cargo run -- ./example_1.bb
 ```
